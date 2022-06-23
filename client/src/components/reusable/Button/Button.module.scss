@@ -1,0 +1,114 @@
+.button {
+  padding: 6px 12px;
+
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+
+  border-radius: 4px;
+
+  cursor: pointer;
+  transition: 150ms all ease;
+
+  &:focus,
+  &:focus-visible {
+    outline: 0;
+  }
+
+  &:disabled {
+    background-color: var(--gray-200) !important;
+    cursor: default;
+
+    .buttonTitle {
+      color: white;
+    }
+
+    svg {
+      fill: white;
+    }
+  }
+
+  &.buttonWithIcon {
+    padding: 6px 12px 6px 8px;
+  }
+}
+
+.primary {
+  background-color: var(--blue-500);
+
+  .buttonTitle {
+    color: white;
+  }
+
+  svg {
+    fill: white;
+  }
+
+  &:hover {
+    background-color: var(--blue-600);
+  }
+
+  &:focus-visible {
+    box-shadow: 0 0 0 2px var(--white), 0 0 0 4px var(--blue-500);
+  }
+
+  &:active {
+    background-color: var(--blue-700);
+  }
+
+  @media (max-width: 768px) {
+    &:hover {
+      background-color: var(--blue-500);
+    }
+
+    &:focus-visible {
+      box-shadow: none;
+    }
+
+    &:active {
+      background-color: var(--blue-700);
+    }
+  }
+}
+
+.secondary {
+  background-color: var(--gray-200);
+
+  .buttonTitle {
+    color: var(--gray-700);
+  }
+
+  svg {
+    fill: var(--gray-700);
+  }
+
+  &:hover {
+    background-color: var(--gray-300);
+  }
+
+  &:focus-visible {
+    box-shadow: 0 0 0 2px var(--white), 0 0 0 4px var(--gray-200);
+  }
+
+  &:active {
+    background-color: var(--gray-200);
+  }
+
+  @media (max-width: 768px) {
+    &:hover {
+      background-color: var(--gray-200);
+    }
+
+    &:focus-visible {
+      box-shadow: none;
+    }
+
+    &:active {
+      background-color: var(--gray-300);
+    }
+  }
+}

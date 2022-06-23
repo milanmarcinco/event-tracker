@@ -1,0 +1,135 @@
+.wrapper {
+  padding: 30px 10px 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+.controls {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+}
+
+.addEventForm {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  .inputGroup {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+  }
+
+  .controls {
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .errorMessage {
+    margin-top: 2px;
+
+    font-size: 12px;
+    line-height: 16px;
+    color: var(--red-400);
+  }
+}
+
+.events {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.eventWrapper {
+  position: relative;
+
+  .event {
+    width: 100%;
+    padding: 6px 10px;
+
+    position: relative;
+    z-index: 1;
+
+    border-left: 4px solid #cecece;
+    border-radius: 4px;
+    background-color: #f4f4f4;
+
+    user-select: none;
+    transition: all 150ms ease;
+
+    &--clicked {
+      transform: translateX(-50px);
+    }
+  }
+
+  &:hover .event:not(.event--clicked) {
+    transform: translateX(-5px);
+  }
+
+  .description {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4px;
+
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--gray-700);
+  }
+
+  .date {
+    font-size: 10px;
+    line-height: 16px;
+    color: var(--gray-500);
+  }
+
+  .daysRemaining {
+    font-size: 11px;
+    line-height: 16px;
+    color: var(--gray-500);
+  }
+
+  .deleteBtn {
+    width: 10px;
+    height: 10px;
+
+    position: absolute;
+    top: 50%;
+    right: 25px;
+    transform: translate(50%, -50%);
+
+    border-radius: 9999px;
+    background-color: rgb(255, 136, 136);
+  }
+}
+
+.noEventsMessage {
+  max-width: 200px;
+  margin: 40px auto;
+
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--gray-500);
+  text-align: center;
+}

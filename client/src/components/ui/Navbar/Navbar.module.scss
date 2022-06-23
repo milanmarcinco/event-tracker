@@ -1,0 +1,171 @@
+.wrapper {
+  box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+  max-width: 1250px;
+  padding: 6px 10px;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav {
+  ul {
+    display: flex;
+    gap: 4px;
+  }
+}
+
+.navItem {
+  display: block;
+  position: relative;
+
+  padding: 6px 8px;
+
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  color: var(--gray-700);
+
+  border-radius: 4px;
+  transition: 150ms all ease;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--blue-100);
+  }
+
+  &:focus {
+    outline: 0;
+  }
+
+  &:focus-visible {
+    outline: 0;
+    box-shadow: 0 0 0 2px var(--blue-500);
+  }
+
+  &:active {
+    background-color: var(--blue-200);
+  }
+
+  @media (max-width: 768px) {
+    &:hover {
+      background-color: white;
+    }
+
+    &:focus-visible {
+      box-shadow: none;
+    }
+
+    &:active {
+      background-color: var(--blue-200);
+    }
+  }
+}
+
+.navItemDropdownWrapper {
+  position: relative;
+}
+
+.dropdownItemsWrapper {
+  min-width: 175px;
+  padding: 6px 0;
+
+  position: absolute;
+  z-index: 1;
+
+  top: calc(100% + 12px);
+  right: 0;
+
+  border-radius: 4px;
+  background-color: var(--white);
+
+  animation: fade-in 150ms ease-out forwards;
+  background-color: white;
+
+  &::after {
+    display: block;
+    content: "";
+
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    z-index: -1;
+
+    top: 0;
+    left: 0;
+
+    border-radius: 4px;
+    box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.1);
+    background-color: transparent;
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0.5;
+      right: -12px;
+    }
+  }
+}
+
+.dropdownItem {
+  display: block;
+  position: relative;
+
+  width: 100%;
+  padding: 6px 8px;
+
+  font-size: 14px;
+  line-height: 20px;
+  text-align: left;
+  color: var(--gray-700);
+  white-space: nowrap;
+
+  transition: 150ms all ease;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--blue-100);
+    transition: 0ms all ease;
+  }
+
+  &:focus {
+    outline: 0;
+  }
+
+  &:focus-visible {
+    z-index: 1;
+    border-radius: 4px;
+    box-shadow: 0 0 0 2px var(--blue-500);
+  }
+
+  &:active {
+    background-color: var(--blue-200);
+  }
+
+  &:disabled {
+    color: var(--gray-400);
+    cursor: default;
+
+    &:hover {
+      background-color: var(--white);
+    }
+  }
+
+  @media (max-width: 768px) {
+    &:hover {
+      background-color: white;
+    }
+
+    &:focus-visible {
+      box-shadow: none;
+    }
+
+    &:active {
+      background-color: var(--blue-100);
+    }
+  }
+}

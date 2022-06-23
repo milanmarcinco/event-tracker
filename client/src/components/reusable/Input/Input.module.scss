@@ -1,0 +1,30 @@
+.input {
+  width: 100%;
+  padding: 6px 12px;
+
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--gray-700);
+
+  border-radius: 4px;
+  box-shadow: 0 0 0 1px var(--gray-300);
+
+  transition: 150ms all ease;
+
+  &:focus {
+    outline: 0;
+    box-shadow: 0 0 0 2px var(--blue-500);
+  }
+
+  &::placeholder {
+    color: var(--gray-400);
+  }
+
+  &:disabled {
+    background-color: var(--gray-100);
+
+    &::placeholder {
+      color: var(--gray-300);
+    }
+  }
+}
